@@ -1,0 +1,122 @@
+/*
+ * Design tokens from DESIGN.md. Change values here, never inline in components.
+ * Brand colors only. No green, orange or red in the interface.
+ */
+:root {
+  /* Color */
+  --color-yankees-blue: #1c3140; /* main: headlines, text, primary buttons */
+  --color-deep-bronze: #7a6243; /* "you are here" and the single most important action */
+  --color-bronze: #a7895f; /* italic emphasis, thin rules, labels */
+  --color-paper: #ffffff; /* canvas, nav, footer */
+  --color-mist: #eef1f4; /* feature and bento surfaces */
+  --color-slate: #5b6872; /* supporting copy, metadata */
+  --color-hairline: #e4e8ec; /* resource card borders */
+
+  /* Type */
+  --font-family: var(--font-carlito), Calibri, sans-serif;
+  --display-1: 80px;
+  --display-2: 64px;
+  --display-3: 40px;
+  --body-size: 20px;
+  --ui-size: 16px; /* nav and buttons */
+  --label-size: 14px;
+  --display-tracking: -0.03em;
+  --display-leading: 1;
+  --body-leading: 1.4;
+
+  /* Spacing: 8px base */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 80px;
+  --space-8: 96px;
+  --space-9: 160px;
+  --section-gap: var(--space-7);
+
+  /* Shape */
+  --radius-nav: 32px;
+  --radius-hero: 32px;
+  --radius-feature: 24px;
+  --radius-resource: 20px;
+  --radius-input: 10px;
+  --radius-capsule: 999px;
+  --shadow-float: 0 0 16px -8px rgba(0, 0, 0, 0.25); /* floating product imagery only */
+}
+
+@media (max-width: 767px) {
+  :root {
+    --display-1: 44px;
+    --display-2: 36px;
+    --display-3: 28px;
+    --body-size: 18px;
+    --section-gap: var(--space-6);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-yankees-blue);
+  font-family: var(--font-family);
+  font-size: var(--body-size);
+  line-height: var(--body-leading);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: var(--display-tracking);
+  line-height: var(--display-leading);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--display-1);
+}
+
+h2 {
+  font-size: var(--display-2);
+}
+
+h3 {
+  font-size: var(--display-3);
+}
+
+p {
+  color: var(--color-slate);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
