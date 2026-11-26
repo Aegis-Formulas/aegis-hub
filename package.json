@@ -14,7 +14,8 @@
     "db:test": "supabase test db",
     "db:test:staging": "node scripts/db-test-linked.mjs",
     "seed:test-practitioner": "node --env-file=.env.local scripts/seed-test-practitioner.mjs",
-    "smoke:sign-in": "node --env-file=.env.local scripts/smoke-sign-in.mjs"
+    "smoke:sign-in": "node --env-file=.env.local scripts/smoke-sign-in.mjs",
+    "shopify:seed-dev": "node --env-file=.env.local scripts/shopify-seed-dev.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
