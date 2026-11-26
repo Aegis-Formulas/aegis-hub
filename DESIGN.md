@@ -1,6 +1,6 @@
 # DESIGN.md · Aegis Practitioner Hub
 
-Status: Round 1, revised with the Bevel reference. Waiting for Emma's OK. These rules apply to every change once approved.
+Status: Approved by Emma (Nov 25, 2026). Round 1, revised with the Bevel reference. These rules apply to every change.
 
 ## Ground rules
 - Design only. Never change headlines, paragraphs or button text.
@@ -68,7 +68,7 @@ No gradients except one: the hero field may fade from Mist to Paper. No purple, 
 - Detail pages: wide reading column, "On this page" rail on the right, 80px between sections.
 
 ## Decisions taken
-1. Headline font: Carlito only, scale and weight do the work (pending Emma's OK).
+1. Headline font: Carlito only, scale and weight do the work (approved by Emma, Nov 25, 2026).
 2. Pill labels above headlines: dropped. Replaced by the sequence rail and plain Bronze labels.
 3. Reference sites: Bevel received; TUB Connect for structure.
 

@@ -19,3 +19,4 @@ _Move items here with the date and who decided._
 - Shopify Plus confirmed (Nov 2026).
 - Build platform: custom app (Next.js, Vercel, Supabase) with Shopify as the commerce engine, not Webflow (Nov 2026).
 - Builder: Emma with Claude Code (Nov 2026).
+- DESIGN.md approved as built in the design system components, including Carlito-only headlines (Emma, Nov 25, 2026).
