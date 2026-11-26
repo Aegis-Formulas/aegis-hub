@@ -12,6 +12,15 @@
   --color-slate: #5b6872; /* supporting copy, metadata */
   --color-hairline: #e4e8ec; /* resource card borders */
 
+  /* Tints, derived from brand colors only (status labels, fields, hover) */
+  --color-field: color-mix(in srgb, var(--color-yankees-blue) 22%, var(--color-paper));
+  --color-mist-deep: color-mix(in srgb, var(--color-yankees-blue) 9%, var(--color-paper));
+  --color-row-hover: color-mix(in srgb, var(--color-mist) 40%, var(--color-paper));
+  --tint-navy: color-mix(in srgb, var(--color-yankees-blue) 10%, var(--color-paper));
+  --tint-bronze: color-mix(in srgb, var(--color-bronze) 16%, var(--color-paper));
+  --scrim: color-mix(in srgb, var(--color-yankees-blue) 28%, transparent);
+  --focus-ring: 3px solid var(--color-bronze);
+
   /* Type */
   --font-family: var(--font-carlito), Calibri, sans-serif;
   --display-1: 80px;
@@ -109,6 +118,26 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1 em,
+h2 em,
+h3 em {
+  font-style: italic;
+  color: var(--color-bronze);
 }
 
 @media (prefers-reduced-motion: reduce) {

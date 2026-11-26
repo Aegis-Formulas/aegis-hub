@@ -1,0 +1,40 @@
+.label {
+  display: inline-block;
+  font-size: var(--label-size);
+  font-weight: 700;
+  color: var(--color-deep-bronze); /* Bronze ink, deepened for small-text contrast */
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-capsule);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navy {
+  background: var(--tint-navy);
+  color: var(--color-yankees-blue);
+}
+
+.bronze {
+  background: var(--tint-bronze);
+  color: var(--color-deep-bronze);
+}
+
+.quiet {
+  background: var(--color-mist);
+  color: var(--color-slate);
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}

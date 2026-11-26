@@ -1,0 +1,21 @@
+.region {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  z-index: 80;
+  width: max-content;
+  max-width: calc(100vw - 2 * var(--space-2));
+  pointer-events: none;
+}
+
+.toast {
+  padding: 12px 18px;
+  border-radius: var(--radius-capsule);
+  background: var(--color-yankees-blue);
+  color: var(--color-paper);
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--color-yankees-blue) 22%, transparent);
+}

@@ -1,0 +1,52 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-height: 44px; /* touch target */
+  padding: var(--space-1) 20px;
+  border: 0;
+  border-radius: var(--radius-capsule);
+  font-size: var(--ui-size);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.primary {
+  background: var(--color-yankees-blue);
+  color: var(--color-paper);
+}
+
+.accent {
+  background: var(--color-deep-bronze);
+  color: var(--color-paper);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-yankees-blue);
+  box-shadow: inset 0 0 0 1.5px var(--color-field);
+}
+
+.ghost:hover {
+  box-shadow: inset 0 0 0 1.5px var(--color-yankees-blue);
+}
+
+.sm {
+  min-height: 38px;
+  padding: 6px var(--space-2);
+  font-size: 15px;
+}
