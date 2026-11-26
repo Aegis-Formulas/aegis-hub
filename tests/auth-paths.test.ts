@@ -16,10 +16,14 @@ describe("safeNextPath", () => {
 
 describe("isPublicPath", () => {
   it("lets sign-in and auth callbacks through", () => {
-    for (const p of ["/sign-in", "/auth/confirm", "/auth/sign-out", "/styleguide"]) expect(isPublicPath(p)).toBe(true);
+    for (const p of ["/sign-in", "/auth/confirm", "/auth/sign-out", "/styleguide", "/api/cron/sync-products"]) {
+      expect(isPublicPath(p)).toBe(true);
+    }
   });
 
   it("protects everything else", () => {
-    for (const p of ["/", "/home", "/account", "/sign-inx", "/authx", "/styleguides"]) expect(isPublicPath(p)).toBe(false);
+    for (const p of ["/", "/home", "/account", "/shop", "/sign-inx", "/authx", "/styleguides", "/api/cron", "/api/other"]) {
+      expect(isPublicPath(p)).toBe(false);
+    }
   });
 });

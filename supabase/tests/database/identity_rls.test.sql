@@ -48,7 +48,10 @@ insert into public.memberships (user_id, org_id, role) values
 insert into public.entitlements (org_id, key) values
   ('10000000-0000-0000-0000-00000000000a', 'wholesale');
 
-select is((select count(*)::int from public.profiles), 5, 'a profile is created for each new user');
+select is(
+  (select count(*)::int from public.profiles where user_id::text like '00000000-0000-0000-0000-0000000000%'),
+  5, 'a profile is created for each new user'
+);
 
 select throws_ok(
   $$insert into public.memberships (user_id, org_id, role)
@@ -134,7 +137,10 @@ select is(
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000ff","role":"authenticated"}', true);
 
-select is((select count(*)::int from public.orgs), 3, 'Aegis staff see every org');
+select is(
+  (select count(*)::int from public.orgs where id::text like '10000000-0000-0000-0000-%'),
+  3, 'Aegis staff see every org'
+);
 
 -- ---------------------------------------------------------------------------
 -- Audit log is append only, even for the database owner

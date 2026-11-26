@@ -13,6 +13,7 @@ Claude Code: treat every **Open** item as a blocker for the features listed unde
 | 7 | Retire Wholesale Gorilla in favor of Shopify B2B | Emma | **Proposed** | Keep both until B2B is verified in Phase 0 | Shop |
 | 8 | Where the WellnessPlus content and Dr. Jaban's RWC hub fit (integrate, license, or link) | Jess, Jaban | **Open** | Link out; don't migrate content | Patient content library |
 | 9 | Product color dots (from the reference chart) vs. navy-only | Emma | **Open** | Keep product colors as small markers only | UI polish |
+| 10 | One login for the wholesale cart: a B2B cart needs a Shopify Customer Account token. Multipass is closed to new stores; the alternative (the hub as the store's identity provider) changes sign-in for every customer, retail included. First check whether the live store already has Multipass | Emma | **Open** | Wholesale prices read server-side through the Admin API; orders go through B2B draft order checkout links. No Storefront B2B cart | Phase 1 Shop cart |
 
 ## Decided
 _Move items here with the date and who decided._
@@ -20,3 +21,4 @@ _Move items here with the date and who decided._
 - Build platform: custom app (Next.js, Vercel, Supabase) with Shopify as the commerce engine, not Webflow (Nov 2026).
 - Builder: Emma with Claude Code (Nov 2026).
 - DESIGN.md approved as built in the design system components, including Carlito-only headlines (Emma, Nov 25, 2026).
+- Phase 0 Shopify: Admin API only. Product sync, wholesale prices from the practice's B2B price list, and a test order through a B2B draft order checkout. Built against a Plus dev store, never the live store (Emma, Nov 25, 2026).

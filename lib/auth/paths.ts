@@ -1,5 +1,8 @@
-/** Routes anyone can open without signing in. Everything else needs a session. */
-const PUBLIC_PREFIXES = ["/sign-in", "/auth/", "/styleguide"];
+/**
+ * Routes anyone can open without signing in. Everything else needs a session.
+ * /api/cron/ checks its own CRON_SECRET instead of a session.
+ */
+const PUBLIC_PREFIXES = ["/sign-in", "/auth/", "/styleguide", "/api/cron/"];
 
 export function isPublicPath(pathname: string): boolean {
   return PUBLIC_PREFIXES.some((p) => pathname === p || pathname.startsWith(p.endsWith("/") ? p : `${p}/`));
