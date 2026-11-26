@@ -16,7 +16,10 @@ const supabase = createServerClient(url, key, {
   cookies: {
     getAll: () => [...jar].map(([name, value]) => ({ name, value })),
     setAll: (toSet) => {
-      for (const { name, value } of toSet) value ? jar.set(name, value) : jar.delete(name);
+      for (const { name, value } of toSet) {
+        if (value) jar.set(name, value);
+        else jar.delete(name);
+      }
     },
   },
 });
