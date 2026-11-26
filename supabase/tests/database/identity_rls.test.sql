@@ -5,7 +5,22 @@
 begin;
 create extension if not exists pgtap with schema extensions;
 
-select plan(18);
+select plan(28);
+
+-- ---------------------------------------------------------------------------
+-- Table permissions: signed-in users read only (RLS filters rows), visitors nothing.
+-- TRUNCATE in particular must never be granted: it ignores row-level security.
+-- ---------------------------------------------------------------------------
+select table_privs_are('public', 'profiles',     'authenticated', array['SELECT'], 'authenticated: select only on profiles');
+select table_privs_are('public', 'orgs',         'authenticated', array['SELECT'], 'authenticated: select only on orgs');
+select table_privs_are('public', 'memberships',  'authenticated', array['SELECT'], 'authenticated: select only on memberships');
+select table_privs_are('public', 'entitlements', 'authenticated', array['SELECT'], 'authenticated: select only on entitlements');
+select table_privs_are('public', 'audit_log',    'authenticated', array['SELECT'], 'authenticated: select only on audit_log');
+select table_privs_are('public', 'profiles',     'anon', array[]::text[], 'anon: nothing on profiles');
+select table_privs_are('public', 'orgs',         'anon', array[]::text[], 'anon: nothing on orgs');
+select table_privs_are('public', 'memberships',  'anon', array[]::text[], 'anon: nothing on memberships');
+select table_privs_are('public', 'entitlements', 'anon', array[]::text[], 'anon: nothing on entitlements');
+select table_privs_are('public', 'audit_log',    'anon', array[]::text[], 'anon: nothing on audit_log');
 
 -- ---------------------------------------------------------------------------
 -- Fixtures (as the database owner, RLS bypassed)
