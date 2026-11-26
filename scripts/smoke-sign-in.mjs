@@ -50,6 +50,18 @@ check("signed in: /sign-in sends you home", signIn.status === 307 && signIn.head
 const account = await get("/account");
 check("signed in: /account loads", account.status === 200, `status ${account.status}`);
 
+// Wholesale prices from the Shopify dev store (placeholder price list: 50% off retail).
+const shop = await get("/shop");
+const shopHtml = await shop.text();
+check("signed in: /shop loads", shop.status === 200, `status ${shop.status}`);
+for (const [name, price] of [
+  ["Test formula A", "$30.00"],
+  ["Test formula B", "$36.00"],
+  ["Test formula C", "$42.00"],
+]) {
+  check(`shop shows ${name} at wholesale ${price}`, shopHtml.includes(name) && shopHtml.includes(price));
+}
+
 const out = await fetch(base + "/auth/sign-out", { method: "POST", redirect: "manual", headers: { cookie } });
 const cleared = (out.headers.getSetCookie?.() ?? []).some((c) => /auth-token/.test(c) && /Max-Age=0|Expires=Thu, 01 Jan 1970/i.test(c));
 check("sign out redirects and clears the session cookie", out.status === 303 && cleared);

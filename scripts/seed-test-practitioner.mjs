@@ -2,7 +2,7 @@
 // Usage: pnpm seed:test-practitioner
 //
 // - Practice "Staging Test Practice", active, with the wholesale entitlement
-// - User test-practitioner@aegis-hub.test, owner + practitioner of that practice
+// - User test-practitioner@example.com, owner + practitioner of that practice
 // - A new random password each run, written ONLY to .env.local (never printed, never committed)
 // Refuses to run unless .env.local points at the project linked in supabase/.temp/project-ref.
 // Never link this folder to production.
@@ -13,7 +13,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const ENV_FILE = ".env.local";
 const PRACTICE_NAME = "Staging Test Practice";
-const EMAIL = "test-practitioner@aegis-hub.test";
+const EMAIL = "test-practitioner@example.com";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const secret = process.env.SUPABASE_SECRET_KEY;

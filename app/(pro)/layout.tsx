@@ -19,6 +19,7 @@ export default async function ProLayout({ children }: LayoutProps<"/">) {
         brand={<span className={styles.wordmark}>Aegis</span>}
         items={[
           { href: "/home", label: "Home" },
+          { href: "/shop", label: "Shop" },
           { href: "/account", label: "Account" },
         ]}
         end={
