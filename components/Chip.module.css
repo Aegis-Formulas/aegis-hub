@@ -1,0 +1,29 @@
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.chip {
+  border: 0;
+  background: var(--color-mist);
+  color: var(--color-slate);
+  border-radius: var(--radius-input); /* not everything is a pill */
+  padding: 7px 14px;
+  min-height: 36px;
+  font-size: var(--label-size);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.chip:hover {
+  color: var(--color-yankees-blue);
+  background: var(--color-mist-deep);
+}
+
+.on,
+.on:hover {
+  background: var(--color-yankees-blue);
+  color: var(--color-paper);
+}

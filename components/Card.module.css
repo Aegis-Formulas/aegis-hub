@@ -1,0 +1,89 @@
+.grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2); /* 16px between elements inside a card */
+  min-height: 220px;
+  color: var(--color-yankees-blue);
+  text-decoration: none;
+}
+
+.feature {
+  background: var(--color-mist);
+  border-radius: var(--radius-feature);
+  padding: var(--space-4);
+}
+
+.resource {
+  background: var(--color-paper);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-resource);
+  padding: 26px;
+}
+
+.link {
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.feature.link:hover {
+  background: var(--color-mist-deep);
+}
+
+.resource.link:hover {
+  border-color: var(--color-field);
+}
+
+.link:hover .title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.label {
+  font-size: var(--label-size);
+  font-weight: 700;
+  color: var(--color-deep-bronze);
+}
+
+.title {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.body {
+  color: var(--color-slate);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+  font-size: 15px;
+  color: var(--color-slate);
+}

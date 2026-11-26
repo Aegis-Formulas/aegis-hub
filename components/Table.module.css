@@ -1,0 +1,48 @@
+.scroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.table th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-slate);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-hairline);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--color-hairline);
+  vertical-align: middle;
+}
+
+.table tbody tr:hover td {
+  background: var(--color-row-hover);
+}
+
+.table .right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  color: var(--color-slate);
+  text-align: center;
+  padding: var(--space-5) 12px;
+}
