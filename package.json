@@ -12,12 +12,17 @@
     "db:start": "supabase start",
     "db:reset": "supabase db reset",
     "db:test": "supabase test db",
-    "db:test:staging": "node scripts/db-test-linked.mjs"
+    "db:test:staging": "node scripts/db-test-linked.mjs",
+    "seed:test-practitioner": "node --env-file=.env.local scripts/seed-test-practitioner.mjs",
+    "smoke:sign-in": "node --env-file=.env.local scripts/smoke-sign-in.mjs"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.2",
     "next": "16.4.6",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
